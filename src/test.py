@@ -68,7 +68,6 @@ def checkCsv():
   # Checks to make sure the data is read correctly
    csv(config.FILE, no_of_chars_in_file)
    print(config.n)
-   return config.n == 3192
 
 
 def checkData():

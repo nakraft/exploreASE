@@ -90,7 +90,7 @@ def main(options, help):
                                     print("WARNING: all to all {} {} {}".format(i, k, "false"))
                                     print(f"all to all comparison failed for {results[base][count].cols.y[k].txt}")
                                 comparisons[i][1][k] = "≠"
-                count += 1
+            count += 1
 
         # generate the stats table
         headers = [y.txt for y in data.cols.y]

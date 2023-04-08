@@ -1,0 +1,14 @@
+{'bins': 16, 'cliffs': 0.147, 'd': 0.35, 'Far': 0.95, 'go': 'nothing', 'file': '../etc/data/auto2.csv', 'help': False, 'Halves': 512, 'min': 0.5, 'Max': 512, 'p': 2, 'rest': 10, 'bootstrap': 512, 'Reuse': True, 'nTimes': 20, 'conf': 0.05, 'seed': 937162211, 'wColor': False}
+        CityMPG+    HighwayMPG+    Weight-    Class-    Avg evals
+----  ----------  -------------  ---------  --------  -----------
+all        22.37          29.09     3072.9     19.51            0
+sway       30.17          34.67     2217.5      9.77            5
+xpln       29.86          35.48    2312.86     10.17            5
+top         35.4           40.8       2153      9.58           93
+
+              CityMPG+    HighwayMPG+    Weight-    Class-
+------------  ----------  -------------  ---------  --------
+all to all    =           =              =          =
+all to sway   =           =              ≠          ≠
+sway to xpln  =           ≠              ≠          =
+sway to top   ≠           ≠              =          =

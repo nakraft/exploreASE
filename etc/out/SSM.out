@@ -1,0 +1,14 @@
+{'bins': 16, 'cliffs': 0.147, 'd': 0.35, 'Far': 0.95, 'go': 'nothing', 'file': '../etc/data/SSM.csv', 'help': False, 'Halves': 512, 'min': 0.5, 'Max': 512, 'p': 2, 'rest': 10, 'bootstrap': 512, 'Reuse': True, 'nTimes': 20, 'conf': 0.05, 'seed': 937162211, 'wColor': False}
+        NUMBERITERATIONS-    TIMETOSOLUTION-    Avg evals
+----  -------------------  -----------------  -----------
+all                 30.94             506.07            0
+sway                 5.24             103.01           10
+xpln                30.42             568.77           10
+top                  3.66              62.41       239360
+
+              NUMBERITERATIONS-    TIMETOSOLUTION-
+------------  -------------------  -----------------
+all to all    =                    =
+all to sway   ≠                    ≠
+sway to xpln  ≠                    ≠
+sway to top   ≠                    ≠

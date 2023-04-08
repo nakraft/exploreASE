@@ -1,0 +1,14 @@
+{'bins': 16, 'cliffs': 0.147, 'd': 0.35, 'Far': 0.95, 'go': 'nothing', 'file': '../etc/data/nasa93dem.csv', 'help': False, 'Halves': 512, 'min': 0.5, 'Max': 512, 'p': 2, 'rest': 10, 'bootstrap': 512, 'Reuse': True, 'nTimes': 20, 'conf': 0.05, 'seed': 937162211, 'wColor': False}
+        Kloc+    Effort-    Defects-    Months-    Avg evals
+----  -------  ---------  ----------  ---------  -----------
+all     94.02     624.41     3761.76      24.18            0
+sway    35.18      140.6     1050.33      15.43            5
+xpln    78.62     370.16     3120.78      19.63            5
+top      4.98      18.48       155.6        8.7           93
+
+              Kloc+    Effort-    Defects-    Months-
+------------  -------  ---------  ----------  ---------
+all to all    =        =          =           =
+all to sway   ≠        ≠          ≠           ≠
+sway to xpln  ≠        ≠          ≠           ≠
+sway to top   ≠        ≠          ≠           ≠

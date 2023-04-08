@@ -1,0 +1,14 @@
+{'bins': 16, 'cliffs': 0.147, 'd': 0.35, 'Far': 0.95, 'go': 'nothing', 'file': '../etc/data/coc1000.csv', 'help': False, 'Halves': 512, 'min': 0.5, 'Max': 512, 'p': 2, 'rest': 10, 'bootstrap': 512, 'Reuse': True, 'nTimes': 20, 'conf': 0.05, 'seed': 937162211, 'wColor': False}
+         LOC+    AEXP-    PLEX-    RISK-    EFFORT-    Avg evals
+----  -------  -------  -------  -------  ---------  -----------
+all   1013.05     2.97     3.05     6.68    30807.5            0
+sway   889.39     3.19     2.48     5.39    32927.1            6
+xpln    980.1     2.99     3.02     6.32    26293.6            6
+top   1528.83      1.7     1.53     4.47    33999.8         1000
+
+              LOC+    AEXP-    PLEX-    RISK-    EFFORT-
+------------  ------  -------  -------  -------  ---------
+all to all    =       =        =        =        =
+all to sway   ≠       =        ≠        ≠        ≠
+sway to xpln  ≠       =        ≠        ≠        ≠
+sway to top   ≠       ≠        ≠        =        ≠

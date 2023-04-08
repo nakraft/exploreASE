@@ -1,0 +1,14 @@
+{'bins': 16, 'cliffs': 0.147, 'd': 0.35, 'Far': 0.95, 'go': 'nothing', 'file': '../etc/data/healthCloseIsses12mths0001-hard.csv', 'help': False, 'Halves': 512, 'min': 0.5, 'Max': 512, 'p': 2, 'rest': 10, 'bootstrap': 512, 'Reuse': True, 'nTimes': 20, 'conf': 0.05, 'seed': 937162211, 'wColor': False}
+        MRE-    ACC+    PRED40+    Avg evals
+----  ------  ------  ---------  -----------
+all    82.32    5.15       22.1            0
+sway   73.74    7.51      18.35            8
+xpln   73.74    7.71      18.51            8
+top    65.66   13.69      27.88        10000
+
+              MRE-    ACC+    PRED40+
+------------  ------  ------  ---------
+all to all    =       =       =
+all to sway   ≠       ≠       ≠
+sway to xpln  ≠       ≠       ≠
+sway to top   ≠       ≠       ≠

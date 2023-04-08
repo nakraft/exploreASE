@@ -18,6 +18,8 @@ def transpose(t):
             u[i].append(t[j][i])
     return u 
 
+def norm(num, n):
+    return n if n == "?" else (n - num.lo) / (num.hi - num.lo + sys.float_info.min)
 
 def dofile(sFile):
     with open(sFile, 'r', encoding = 'utf-8') as f:
@@ -62,7 +64,7 @@ def rnd(n, nPlaces = 3):
     mult = 10**nPlaces
     return math.floor(n * mult + 0.5) / mult
 
-def rand(lo, hi, mSeed = None):
+def rand(lo = 0, hi = 1, mSeed = None):
     lo, hi = lo or 0, hi or 1
     Seed = config.Seed
     Seed = 1 if mSeed else (16807 * Seed) % 2147483647
@@ -154,23 +156,3 @@ def prune(rule, maxSize):
             rule[txt] = None
     if n > 0:
         return rule
-    
-def getCliArgs():
-    """
-    Function:
-        getCliArgs
-    Description:
-        Parses out the arguments entered or returns an error if incorrect syntax is used
-    Input:
-        None
-    Output:
-        None
-    """
-    global args
-    parser = argparse.ArgumentParser(add_help=False)
-    parser.add_argument("-b", "--bins", type=int, default=16, required=False, help="initial number of bins")
-    parser.add_argument("-d", "--d", type=float, default=0.35, required=False, help="different is over sd*d")
-    parser.add_argument("-g", "--go", type=str, default="all", required=False, help="start-up action")
-    parser.add_argument("-h", "--help", action='store_true', help="show help")
-    parser.add_argument("-s", "--seed", type=int, default=937162211, required=False, help="random number seed")
-    parser.add_argument("-f", "--file", type=str, default="../etc/data/auto93.csv", required=False, help="data file")

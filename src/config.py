@@ -13,17 +13,22 @@ OPTIONS:
   -d  --d       different is over sd*d       = .35
   -F  --Far     distance to distant          = .95
   -g  --go      start-up action              = nothing
+  -f  --file    file to generate table of    = etc/data/pom.csv
   -h  --help    show help                    = false
   -H  --Halves  search space for clustering  = 512
   -m  --min     size of smallest cluster     = .5
   -M  --Max     numbers                      = 512
   -p  --p       dist coefficient             = 2
   -r  --rest    how many of rest to sample   = 10
+  -x  --bootstrap   number of samples to bootstrap   = 512
   -R  --Reuse   child splits reuse a parent pole = true
+  -n  --nTimes   number of iterations to run  = 20
+  -o  --conf        confidence interval      = 0.05
   -s  --seed    random number seed           = 937162211
+  -h  --help    show help                    = false
+  -w  --wColor      output with color        = true
 """
 
-FILE = "etc/data/auto93.csv"   
 Seed = 937162211
 
 n = 0

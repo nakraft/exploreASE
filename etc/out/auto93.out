@@ -1,0 +1,14 @@
+{'bins': 16, 'cliffs': 0.147, 'd': 0.35, 'Far': 0.95, 'go': 'nothing', 'file': '../etc/data/auto93.csv', 'help': False, 'Halves': 512, 'min': 0.5, 'Max': 512, 'p': 2, 'rest': 10, 'bootstrap': 512, 'Reuse': True, 'nTimes': 20, 'conf': 0.05, 'seed': 937162211, 'wColor': False}
+         Lbs-    Acc+    Mpg+    Avg evals
+----  -------  ------  ------  -----------
+all   2970.42   15.57   23.84            0
+sway  2575.33   16.29      20            6
+xpln   2423.3   16.79   28.57            6
+top   1991.91   19.52   40.91          398
+
+              Lbs-    Acc+    Mpg+
+------------  ------  ------  ------
+all to all    =       =       =
+all to sway   =       =       =
+sway to xpln  ≠       ≠       ≠
+sway to top   ≠       ≠       ≠

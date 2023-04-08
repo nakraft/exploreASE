@@ -1,5 +1,5 @@
 import math
-from util import rnd
+from util import *
 import config as config
 class Num():
     """
@@ -12,25 +12,36 @@ class Num():
         self.n = 0
         self.mu = 0
         self.m2 = 0
-
+        self.sd = 0
         self.lo = math.inf
         self.hi = -math.inf
         self.w = -1 if self.txt.endswith("-") else 1
-        self.has = {}
+        self.has_ = {}
 
-    def add(self, n: float) -> None:
+    def add(self, x, n: float = 1) -> None:
         """
-        Updates values needed for standard deviation
+        Adds n and updates lo, hi and stuff needed for standard deviation.
+        :param n: Number to add
+        :return: None
         """
-        if n != "?":
-            self.n += 1
-            if self.n <= config.the['Max']:
-                self.has[n]= n
-            d = n - self.mu
-            self.mu += d / self.n
-            self.m2 += d * (n - self.mu)
-            self.lo = min(n, self.lo)
-            self.hi = max(n, self.hi)
+        if x != "?":
+            self.n += n
+
+            self.lo, self.hi = min(x, self.lo), max(x, self.hi)
+
+            all = len(self.has_)
+
+            pos = all + 1 if all < config.the["Max"] else rint(1, all) if rand() < config.the["Max"] / self.n else 0
+
+            if pos:
+                self.has_[pos] = x
+                self.ok = False
+
+            # for stats
+            d = x - self.mu
+            self.mu = self.mu + d/self.n
+            self.m2 = self.m2 + d*(x-self.mu)
+            self.sd = 0 if self.n<2 else (self.m2/(self.n - 1))**.5
 
     def mid(self) -> float:
         """
@@ -58,7 +69,12 @@ class Num():
             return n 
         else: 
             return (n - self.lo) / (self.hi - self.lo + (10**-32))
-
+        
+    def has(self):
+        ret = dict(sorted(self.has_.items(), key=lambda x: x[1]))
+        self.ok = True
+        return list(ret.values())
+    
     def dist(self, n1, n2): 
         if n1 == "?" and n2 == "?": 
             return 1

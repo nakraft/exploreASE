@@ -1,3 +1,4 @@
+import re
 from num import Num
 from sym import Sym
 
@@ -21,23 +22,25 @@ class Cols:
         self.y = []
         self.klass = None
 
-        for col_name in t:
-            if col_name[0].isupper():
-                col = Num(t.index(col_name), col_name)
-            else:
-                col = Sym(t.index(col_name), col_name)
+        for n, s in enumerate(t):
+            s = s.strip()
+            # Generate Nums and Syms from column names
+            col = Num(n, s) if re.findall("^[A-Z]+", s) else Sym(n, s)
             self.all.append(col)
 
-            if not col_name[-1] == "X":
-                if "-" in col_name or "+" in col_name or "!" in col_name:
-                    self.y.append(col)
-                else:
-                    self.x.append(col)
-                if "!" in col_name:
-                    self.klass=col
+            if not re.findall("X$", s):
+                if re.findall("!$", s):
+                    self.klass = col
+                # if it ends in "!", "+", or "-", append it to self.y, else append to self.x
+                self.y.append(col) if re.findall("[!+-]$", s) else self.x.append(col)
 
-    def add(self, row):
-        for t in [self.x, self.y]:
-            for col in t:
+    def add(self, row) -> None:
+        """
+        Updates the columns with details from row
+        :param row: Row to add
+        """
+        for _, t in enumerate([self.x, self.y]):
+            for _, col in enumerate(t):
                 col.add(row.cells[col.at])
+
 

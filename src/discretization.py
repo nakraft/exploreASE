@@ -74,3 +74,22 @@ def merge(col1, col2):
         new.lo = min(col1.lo, col2.lo)
         new.hi = max(col1.hi, col2.hi)
     return new
+
+def bin(col,x):
+    if x=="?" or type(col) == Sym:
+        return x
+    tmp = (col.hi - col.lo)/(config.the["bins"] - 1)
+    return col.hi == col.lo and 1 or floor(x/tmp + .5)*tmp
+
+
+def value(has, n_b: int = 1, n_r: int = 1, s_goal: str = None) -> float:
+    b, r = 0, 0
+
+    for x, n in has.items():
+        if x == s_goal:
+            b = b + n
+        else:
+            r = r + n
+
+    b, r = b / (n_b + 1 / inf), r / (n_r + 1 / inf)
+    return b ** 2 / (b + r)

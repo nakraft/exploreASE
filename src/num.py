@@ -51,7 +51,7 @@ class Num():
         return self.mu
 
 
-    def div(self):
+    def div(self) -> float:
         return (self.m2 < 0 or self.n < 2) and 0 or (self.m2 / (self.n - 1)) ** 0.5
 
 

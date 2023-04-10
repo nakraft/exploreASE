@@ -34,7 +34,6 @@ def main(options, help):
 
         count = 0
         data=None
-        # do a while loop because sometimes explain can return -1
         while count < config.the["nTimes"]:
             # read in the data
             data=Data(config.the["file"])
@@ -60,11 +59,8 @@ def main(options, help):
                 results['top'].append(top)
 
                 # accumulate the number of evals
-                # for all: 0 evaluations 
                 n_evals["all"] += 0
                 n_evals["sway"] += evals_sway
-                # xpln uses the same number of evals since it just uses the data from
-                # sway to generate rules, no extra evals needed
                 n_evals["xpln"] += evals_sway
                 n_evals["top"] += len(data.rows)
 
@@ -86,11 +82,10 @@ def main(options, help):
                             equals = bootstrap(base_y.has(), diff_y.has()) and cliffsDelta(base_y.has(), diff_y.has())
                             if not equals:
                                 if i == 0:
-                                    # should never fail for all to all, unless sample size is large
                                     print("WARNING: all to all {} {} {}".format(i, k, "false"))
                                     print(f"all to all comparison failed for {results[base][count].cols.y[k].txt}")
                                 comparisons[i][1][k] = "≠"
-            count += 1
+                count += 1
 
         # generate the stats table
         headers = [y.txt for y in data.cols.y]
@@ -101,7 +96,7 @@ def main(options, help):
             stats = get_stats(v)
             stats_list = [k] + [stats[y] for y in headers]
             # adds on the average number of evals
-            stats_list += [n_evals[k]/config.the["nTimes"]]
+            stats_list += [float(n_evals[k]/config.the["nTimes"])]
             
             table.append(stats_list)
         

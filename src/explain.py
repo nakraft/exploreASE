@@ -19,8 +19,6 @@ class Explain:
         rule = self.rule(ranges, self.max_sizes)
 
         if rule:
-            # print(rule)
-
             bestr = selects(rule, self.best.rows)
             restr = selects(rule, self.rest.rows)
 
@@ -38,6 +36,7 @@ class Explain:
             for _,range in enumerate(ranges):
                 tmp.append({"range":range, "max":len(ranges),"val": v(range['y'].has)})
         rule,most=self.firstN(sorted(tmp,key = lambda x: x["val"],reverse=True),self.score)
+        print(rule == True)
         return rule,most
 
     def firstN(self, sorted_ranges, scoreFun):

@@ -60,7 +60,7 @@ def rint(lo,hi):
 def any(t):
     return t[rint(0, len(t))-1]
 
-def rnd(n, nPlaces = 3):
+def rnd(n: float, nPlaces = 2) -> float:
     mult = 10**nPlaces
     return math.floor(n * mult + 0.5) / mult
 

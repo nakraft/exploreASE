@@ -1,1 +1,15 @@
-{'bins': 16, 'cliffs': 0.147, 'd': 0.35, 'Far': 0.95, 'go': 'nothing', 'file': 'etc/data/pom.csv', 'help': False, 'Halves': 512, 'min': 0.5, 'Max': 512, 'p': 2, 'rest': 10, 'bootstrap': 512, 'Reuse': True, 'nTimes': 20, 'conf': 0.05, 'seed': 937162211, 'wColor': True}
+{'bins': 16, 'cliffs': 0.147, 'd': 0.35, 'Far': 0.95, 'go': 'nothing', 'file': 'etc/data/pom.csv', 'help': False, 'Halves': 512, 'min': 0.5, 'Max': 512, 'p': 2, 'rest': 10, 'bootstrap': 512, 'Reuse': True, 'nTimes': 20, 'conf': 0.05, 'seed': 937162211, 'wColor': False}
+
+        Cost-    Completion+    Idle-    Avg evals
+----  -------  -------------  -------  -----------
+all    370.01           0.87     0.24            0
+sway   195.77           0.85     0.26            8
+xpln   283.51           0.87     0.24            8
+top    150.08           0.96        0         9999
+
+              Cost-    Completion+    Idle-
+------------  -------  -------------  -------
+all to all    =        =              =
+all to sway   ≠        ≠              =
+sway to xpln  ≠        ≠              =
+sway to top   ≠        ≠              ≠

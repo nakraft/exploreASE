@@ -36,7 +36,6 @@ class Explain:
             for _,range in enumerate(ranges):
                 tmp.append({"range":range, "max":len(ranges),"val": v(range['y'].has)})
         rule,most=self.firstN(sorted(tmp,key = lambda x: x["val"],reverse=True),self.score)
-        print(rule == True)
         return rule,most
 
     def firstN(self, sorted_ranges, scoreFun):

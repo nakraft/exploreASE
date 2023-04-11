@@ -1,14 +1,19 @@
 {'bins': 16, 'cliffs': 0.147, 'd': 0.35, 'Far': 0.95, 'go': 'nothing', 'file': '../etc/data/china.csv', 'help': False, 'Halves': 512, 'min': 0.5, 'Max': 512, 'p': 2, 'rest': 10, 'bootstrap': 512, 'Reuse': True, 'nTimes': 20, 'conf': 0.05, 'seed': 937162211, 'wColor': False}
-        N_effort-    Avg evals
-----  -----------  -----------
-all       4277.64            0
-sway      1273.27            6
-xpln      2212.13            6
-top        152.07          499
+         N_effort-    Avg evals
+-----  -----------  -----------
+all        4277.64            0
+sway1      1273.27            6
+xpln1      2212.13            6
+sway2         1825            4
+xpln2      3437.63            4
+top         152.07          499
 
-              N_effort-
-------------  -----------
-all to all    =
-all to sway   =
-sway to xpln  ≠
-sway to top   ≠
+                N_effort-
+--------------  -----------
+all to all      =
+all to sway1    ≠
+all to sway2    ≠
+sway1 to sway2  ≠
+sway1 to xpln1  ≠
+sway2 to xpln2  ≠
+sway1 to top    ≠

@@ -56,11 +56,11 @@ def cliffsDelta(ns1, ns2):
                 lt = lt + 1
 
     difference = abs(lt - gt) / n 
-    return difference <= config.the['cliff']
+    return difference <= config.the['cliffs']
 
 def delta(i, other): 
     e, y, z = 1E-32, i, other
-    return abs(y.mu - z.mu + 1) / (e + y.sd ** 2 / (y.n+1) + z.sd ** 2 / (z.n+1) ** .5)
+    return abs(y.mu - z.mu + 1) / (e + y.sd ** 2 / (y.n + 1) + z.sd ** 2 / (z.n + 1) ** .5)
 
 def bootstrap(y0, z0): 
     x, y, z, yhat, zhat = Num(), Num(), Num(), [], []
@@ -193,26 +193,3 @@ def tiles(rxs):
             rx["show"]= rx["show"] + ", " + config.the["Fmt"].format(x)
         rx["show"] = rx["show"] + "}"
     return rxs
-
-    
-def cliffsDelta(ns1, ns2):
-    if len(ns1) > 256:
-        ns1 = many(ns1, 256)
-    if len(ns2) > 256:
-        ns2 = many(ns2, 256)
-    if len(ns1) > 10 * len(ns2):
-        ns2 = many(ns1, 10 * len(ns2))
-    if len(ns2) > 10 * len(ns1):
-        ns2 = many(ns2, 10 * len(ns1))
-
-    n, gt, lt = 0, 0, 0
-    for x in ns1:
-        for y in ns2:
-            n = n + 1
-            if x > y:
-                gt = gt + 1
-
-            elif x < y:
-                lt = lt + 1
-
-    return abs(lt - gt) / n <= config.the["cliffs"]

@@ -1,6 +1,7 @@
 from functools import cmp_to_key
 import math
 from operator import itemgetter
+import random
 from typing import Dict, List, Tuple, Union
 from discretization import RANGE
 from sym import Sym
@@ -72,20 +73,7 @@ class Data:
         ret["N"] = len(self.rows)
         return ret
 
-    def cluster(self, rows: List[Row] = None, cols: List[Union[Sym, Num]] = None, above: Row = None):
-  
-        rows = self.rows if rows is None else rows
-        cols = self.cols.x if cols is None else cols
 
-        node = {"data": self.clone(rows)}
-
-        if len(rows) >= 2:
-            left, right, node['A'], node['B'], node['mid'], node['c'] = self.half(rows, cols, above)
-
-            node['left'] = self.cluster(left, cols, node['A'])
-            node['right'] = self.cluster(right, cols, node['B'])
-
-        return node
 
     def sway(self, cols=None):
         def worker(rows, worse, evals0=None, above=None):
@@ -93,7 +81,6 @@ class Data:
                 return rows, many(worse, config.the["rest"] * len(rows)), evals0
 
             l, r, A, B, c, evals = self.half(rows, cols, above)
-
             # replace
             if self.better(B, A):
                 l, r, A, B = r, l, B, A
@@ -106,7 +93,25 @@ class Data:
         best, rest, evals = worker(self.rows, [], 0)
 
         return Data.clone(self, best), Data.clone(self, rest), evals
+    
+    def sway2(self, cols=None):
+        def worker(rows, worse, evals0=None, above=None):
+            if len(rows) <= len(self.rows) ** config.the["min"]:
+                return rows, many(worse, config.the["rest"] * len(rows)), evals0
 
+            l, r, A, B, c, evals = self.half2(rows, cols, above)
+            # replace
+            if self.better(B, A):
+                l, r, A, B = r, l, B, A
+
+            for x in r:
+                worse.append(x)
+
+            return worker(l, worse, evals + evals0, A)
+
+        best, rest, evals = worker(self.rows, [], 0)
+
+        return Data.clone(self, best), Data.clone(self, rest), evals
     # zitzler predicate
     def better(self, row1, row2, s1=0, s2=0, ys=None, x=0, y=0):
         if not ys:
@@ -125,6 +130,7 @@ class Data:
         tmp = sorted(self.rows, key=cmp_to_key(lambda row1, row2: -1 if self.better(row1, row2) else 1))
         return tmp[1:n], tmp[n+1:] if n is not None else tmp
 
+    
     def half(self, rows=None, cols=None, above=None):
         """
         divides data using 2 far points
@@ -153,9 +159,48 @@ class Data:
 
         sorted_rows = sorted(map(proj, rows), key=lambda x: x["x"])
         left, right = [], []
-
+            
         for n, two in enumerate(sorted_rows):
             if (n + 1) <= (len(rows) / 2):
+                left.append(two["row"])
+            else:
+                right.append(two["row"])
+
+        evals = 1 if config.the["Reuse"] and above else 2
+
+        return left, right, A, B, c, evals 
+    
+    def half2(self, rows=None, cols=None, above=None):
+        """
+        divides data using 2 far points
+        """
+
+        def gap(r1, r2):
+            return self.dist(r1, r2, cols)
+
+        def cos(a, b, c):
+            if c == 0:
+                return 0
+            return (a ** 2 + c ** 2 - b ** 2) / (2 * c)
+
+        def proj(r):
+            return {'row': r, 'x': cos(gap(r, A), gap(r, B), c)}
+
+        rows = rows or self.rows
+        some = many(rows, int(config.the["Halves"]))
+
+        A = above if above and config.the["Reuse"] else any(some)
+
+        tmp = sorted([{"row": r, "d": gap(r, A)} for r in some], key=lambda x: x["d"])
+        far = tmp[int((len(tmp) - 1) * config.the["Far"])]
+
+        B, c = far["row"], far["d"]
+
+        sorted_rows = sorted(map(proj, rows), key=lambda x: x["x"])
+        left, right = [], []
+            
+        for n, two in enumerate(sorted_rows):
+            if (n + 1) <= (random.randint(0,len(rows)) / 2):
                 left.append(two["row"])
             else:
                 right.append(two["row"])

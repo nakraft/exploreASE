@@ -1,14 +1,19 @@
 {'bins': 16, 'cliffs': 0.147, 'd': 0.35, 'Far': 0.95, 'go': 'nothing', 'file': '../etc/data/healthCloseIsses12mths0011-easy.csv', 'help': False, 'Halves': 512, 'min': 0.5, 'Max': 512, 'p': 2, 'rest': 10, 'bootstrap': 512, 'Reuse': True, 'nTimes': 20, 'conf': 0.05, 'seed': 937162211, 'wColor': False}
-        MRE-    ACC+    PRED40+    Avg evals
-----  ------  ------  ---------  -----------
-all    92.29   -8.53      17.79            0
-sway   58.69   -5.46      41.67            8
-xpln   78.41   -6.54      26.69            8
-top        0       0      83.33        10000
+         MRE-     ACC+    PRED40+    Avg evals
+-----  ------  -------  ---------  -----------
+all     92.29    -8.53      17.79            0
+sway1   58.69    -5.46      41.67            8
+xpln1   78.41    -6.54      26.69            8
+sway2  68.209  -5.3425     33.663          6.2
+xpln2  76.139   -6.305     28.253          6.2
+top         0        0      83.33        10000
 
-              MRE-    ACC+    PRED40+
-------------  ------  ------  ---------
-all to all    =       =       =
-all to sway   ≠       ≠       ≠
-sway to xpln  ≠       =       ≠
-sway to top   ≠       ≠       ≠
+                MRE-    ACC+    PRED40+
+--------------  ------  ------  ---------
+all to all      =       =       =
+all to sway1    ≠       ≠       ≠
+all to sway2    ≠       ≠       ≠
+sway1 to sway2  ≠       ≠       ≠
+sway1 to xpln1  ≠       ≠       ≠
+sway2 to xpln2  ≠       ≠       ≠
+sway1 to top    ≠       ≠       ≠

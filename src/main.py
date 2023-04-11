@@ -25,34 +25,44 @@ def main(options, help):
     if options["help"]:
         print(help)
     else:
-        results = {"all": [], "sway": [], "xpln": [], "top": []}
+        results = {"all": [], "sway1": [], "xpln1": [], "sway2" : [], "xpln2": [], "top": []}
         comparisons = [[["all", "all"],None], 
-                       [["all", "sway"],None],  
-                       [["sway", "xpln"],None],  
-                       [["sway", "top"],None]]
-        n_evals = {"all": 0, "sway": 0, "xpln": 0, "top": 0}
+                       [["all", "sway1"],None],
+                       [["all", "sway2"],None],
+                       [["sway1", "sway2"],None],    
+                       [["sway1", "xpln1"],None],  
+                       [["sway2", "xpln2"],None],  
+                       [["sway1", "top"],None]]
+        n_evals = {"all": 0, "sway1": 0, "sway2": 0,  "xpln1": 0, "xpln2": 0, "top": 0}
 
         count = 0
         data=None
         while count < config.the["nTimes"]:
             # read in the data
             data=Data(config.the["file"])
+            data2=Data(config.the["file"])
             # get the "all" and "sway" results
             best,rest,evals_sway = data.sway()
+            best2,rest2,evals_sway2 = data2.sway2()
             # get the "xpln" results
             data.best = best
             data.rest = rest
+            data2.best = best2
+            data2.rest = rest2
             explain = Explain(best,rest)
+            explain2 = Explain(best2,rest2)
             rule,_= explain.xpln(data,best,rest)
+            rule2,_= explain2.xpln2(data2,best2,rest2)
             # if it was able to find a rule
-            if rule != -1:
+            if rule != -1 and rule2 != -1:
                 # get the best rows of that rule
                 data1= Data(data,selects(rule,data.rows))
-
+                data2= Data(data2,selects(rule2,data2.rows))
                 results['all'].append(data)
-                results['sway'].append(best)
-                results['xpln'].append(data1)
-
+                results['sway1'].append(best)
+                results['xpln1'].append(data1)
+                results["sway2"].append(best2)
+                results["xpln2"].append(data2)
                 # get the "top" results by running the betters algorithm
                 top2,_ = data.betters(len(best.rows))
                 top = Data(data,top2)
@@ -60,31 +70,12 @@ def main(options, help):
 
                 # accumulate the number of evals
                 n_evals["all"] += 0
-                n_evals["sway"] += evals_sway
-                n_evals["xpln"] += evals_sway
+                n_evals["sway1"] += evals_sway
+                n_evals["xpln1"] += evals_sway
                 n_evals["top"] += len(data.rows)
-
-                # update comparisons
-                for i in range(len(comparisons)):
-                    [base, diff], result = comparisons[i]
-                    # if they haven't been initialized, mark with true until we can prove false
-                    if result == None:
-                        comparisons[i][1] = ["=" for _ in range(len(data.cols.y))]
-                    # for each column
-                    for k in range(len(data.cols.y)):
-                        # if not already marked as false
-                        if comparisons[i][1][k] == "=":
-                            # check if it is false
-                            base_y, diff_y = results[base][count].cols.y[k],results[diff][count].cols.y[k]
-                            # print(base_y.has())
-                            # print('nnn')
-                            # print(diff_y.has())
-                            equals = bootstrap(base_y.has(), diff_y.has()) and cliffsDelta(base_y.has(), diff_y.has())
-                            if not equals:
-                                if i == 0:
-                                    print("WARNING: all to all {} {} {}".format(i, k, "false"))
-                                    print(f"all to all comparison failed for {results[base][count].cols.y[k].txt}")
-                                comparisons[i][1][k] = "≠"
+                n_evals["sway2"] += evals_sway2
+                n_evals["xpln2"] += evals_sway2
+                comparisons = update_comp(comparisons, results, count, data)
                 count += 1
 
         # generate the stats table
@@ -137,5 +128,24 @@ def get_stats(data_array):
     for k,v in res.items():
         res[k] /= config.the["nTimes"]
     return res
-
+def update_comp(comparisons, results, count, data):
+    # update comparisons
+        for i in range(len(comparisons)):
+            [base, diff], result = comparisons[i]
+            # if they haven't been initialized, mark with true until we can prove false
+            if result == None:
+                comparisons[i][1] = ["=" for _ in range(len(data.cols.y))]
+            # for each column
+            for k in range(len(data.cols.y)):
+                # if not already marked as false
+                if comparisons[i][1][k] == "=":
+                    # check if it is false
+                    base_y, diff_y = results[base][count].cols.y[k],results[diff][count].cols.y[k]
+                    equals = bootstrap(base_y.has(), diff_y.has()) and cliffsDelta(base_y.has(), diff_y.has())
+                    if not equals:
+                        if i == 0:
+                            print("WARNING: all to all {} {} {}".format(i, k, "false"))
+                            print(f"all to all comparison failed for {results[base][count].cols.y[k].txt}")
+                        comparisons[i][1][k] = "≠"
+        return comparisons
 main(config.the, config.help)

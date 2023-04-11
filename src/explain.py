@@ -38,6 +38,18 @@ class Explain:
         rule,most=self.firstN(sorted(tmp,key = lambda x: x["val"],reverse=True),self.score)
         return rule,most
 
+    def xpln2(self, data: Data, best: Data, rest: Data):
+        def v(has):
+            return value(has, len(best.rows), len(rest.rows), "best")
+        
+        tmp,self.max_sizes = [],{}
+        for _,ranges in enumerate(bins(data.cols.x,{"best":best.rows, "rest":rest.rows})):
+            self.max_sizes[ranges[0]['txt']] = len(ranges)
+            for _,range in enumerate(ranges):
+                tmp.append({"range":range, "max":len(ranges),"val": v(range['y'].has)})
+        rule,most=self.firstN(sorted(tmp,key = lambda x: x["val"],reverse=True),self.score)
+        return rule,most
+    
     def firstN(self, sorted_ranges, scoreFun):
         first = sorted_ranges[0]['val']
 

@@ -192,7 +192,7 @@ class Data:
         A = above if above and config.the["Reuse"] else any(some)
 
         tmp = sorted([{"row": r, "d": gap(r, A)} for r in some], key=lambda x: x["d"])
-        far = tmp[int((len(tmp) - 1) * config.the["Far"])]
+        far = tmp[int((random.randint(0,len(tmp) - 1) * config.the["Far"]))] 
 
         B, c = far["row"], far["d"]
 
@@ -200,7 +200,7 @@ class Data:
         left, right = [], []
             
         for n, two in enumerate(sorted_rows):
-            if (n + 1) <= (random.randint(0,len(rows)) / 2):
+            if (n + 1) <= (len(rows) / 2):
                 left.append(two["row"])
             else:
                 right.append(two["row"])

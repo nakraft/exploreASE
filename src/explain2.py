@@ -9,7 +9,7 @@ import time
 from data import Data
 from discretization import value, bins, RANGE
 from string_util import *
-class Explain:
+class Explain2:
     def __init__(self, best: Data, rest: Data):
         self.best = best
         self.rest = rest
@@ -28,7 +28,7 @@ class Explain:
                 return value({"best": len(bestr), "rest": len(restr)}, len(self.best.rows), len(self.rest.rows), "best"), rule
         return None,None
 
-    def xpln(self, data: Data, best: Data, rest: Data):
+    def xpln2(self, data: Data, best: Data, rest: Data):
         start_time = time.time()
         def v(has):
             return value(has, len(best.rows), len(rest.rows), "best")
@@ -38,8 +38,8 @@ class Explain:
             self.max_sizes[ranges[0]['txt']] = len(ranges)
             for _,range in enumerate(ranges):
                 tmp.append({"range":range, "max":len(ranges),"val": v(range['y'].has)})
-        rule,most=self.firstN(sorted(tmp,key = lambda x: x["val"],reverse=True),self.score)
-        print("time xpln1= " + str(time.time()-start_time))
+        rule, most = self.firstN(heapq.nlargest(len(ranges), tmp, key=lambda x: x["val"]), self.score)
+        print("time xpln2= " + str(time.time()-start_time))
         return rule,most
     
     def firstN(self, sorted_ranges, scoreFun):

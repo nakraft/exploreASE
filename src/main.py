@@ -8,6 +8,7 @@ from util import *
 from stats import cliffsDelta, bootstrap
 from tabulate import tabulate
 from explain import Explain
+from explain2 import Explain2
 
 def main(options, help):
     """
@@ -50,7 +51,7 @@ def main(options, help):
             data2.best = best2
             data2.rest = rest2
             explain = Explain(best,rest)
-            explain2 = Explain(best2,rest2)
+            explain2 = Explain2(best2,rest2)
             rule,_= explain.xpln(data,best,rest)
             rule2,_= explain2.xpln2(data2,best2,rest2)
             # if it was able to find a rule

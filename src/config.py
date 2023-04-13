@@ -22,7 +22,7 @@ OPTIONS:
   -r  --rest    how many of rest to sample   = 10
   -x  --bootstrap   number of samples to bootstrap   = 512
   -R  --Reuse   child splits reuse a parent pole = true
-  -n  --nTimes   number of iterations to run  = 2
+  -n  --nTimes   number of iterations to run  = 20
   -o  --conf        confidence interval      = 0.05
   -s  --seed    random number seed           = 937162211
   -h  --help    show help                    = false

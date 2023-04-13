@@ -60,7 +60,7 @@ def cliffsDelta(ns1, ns2):
 
 def delta(i, other): 
     e, y, z = 1E-32, i, other
-    return abs(y.mu - z.mu + 1) / (e + y.sd ** 2 / (y.n + 1) + z.sd ** 2 / (z.n + 1) ** .5)
+    return abs(y.mu - z.mu) / (e + y.sd ** 2 / (y.n) + z.sd ** 2 / (z.n) ** .5)
 
 def bootstrap(y0, z0): 
     x, y, z, yhat, zhat = Num(), Num(), Num(), [], []
@@ -79,7 +79,7 @@ def bootstrap(y0, z0):
     tobs = delta(y, z)
     n = 0
     for i in range(config.the['bootstrap']):
-        if (delta(Num(samples(yhat)), Num(samples(zhat))) > tobs):
+        if delta(Num(t=samples(yhat)), Num(t=samples(zhat))) > tobs:
             n = n + 1
     return n / config.the['bootstrap'] > config.the['conf']
 def RX(t, s): 

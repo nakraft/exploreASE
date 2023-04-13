@@ -5,7 +5,7 @@ class Num():
     """
     Summarizes a stream of numbers. 
     """
-    def __init__(self, at: int = 0, txt: str = "") -> None:
+    def __init__(self, at: int = 0, txt: str = "", t= None) -> None:
         self.at = at
         self.txt = txt
 
@@ -17,6 +17,9 @@ class Num():
         self.hi = -math.inf
         self.w = -1 if self.txt.endswith("-") else 1
         self.has_ = {}
+        if t:
+            for x in t:
+                self.add(x)
 
     def add(self, x, n: float = 1) -> None:
         """

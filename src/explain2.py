@@ -97,27 +97,6 @@ class Explain2:
             return new_rule
         return None
 
-
-def showRule(self, rule):
-    def pretty(range):
-        return range['lo'] if range['lo'] == range['hi'] else [range['lo'], range['hi']]
-
-    def merge(t0):
-        t, j = [], 1
-        while j <= len(t0):
-            left = t0[j-1]
-            if j < len(t0):
-                right = t0[j]
-            else:
-                right = None
-            if right and left['hi'] == right['lo']:
-                left['hi'] = right['hi']
-                j = j+1
-            t.append({'lo': left['lo'], 'hi': left['hi']})
-            j = j+1
-        return t if len(t0) == len(t) else merge(t)
-
-
 def selects(rule, rows):
     def disjunction(ranges, row):
         for rang in ranges:

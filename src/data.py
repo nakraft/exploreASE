@@ -193,7 +193,7 @@ class Data:
 
         # randomly select two rows as initial A and B points
         random.seed(100)
-        A, B = random.sample(some, 2)
+        A, B = random.sample(rows[:10], 2)
 
         c = gap(A, B)
 

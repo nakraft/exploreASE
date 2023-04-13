@@ -27,6 +27,9 @@ OPTIONS:
   -s  --seed    random number seed           = 937162211
   -h  --help    show help                    = false
   -w  --wColor      output with color        = true
+  -w1 --width    the width for the tile      = 40
+  -f1 --Fmt     the format of the tile       = {:.2f}
+  -c1 --cohen   effect-size mthod            = .35
 """
 
 Seed = 937162211

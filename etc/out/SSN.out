@@ -1,19 +1,59 @@
-{'bins': 16, 'cliffs': 0.147, 'd': 0.35, 'Far': 0.95, 'go': 'nothing', 'file': '../etc/data/SSN.csv', 'help': False, 'Halves': 512, 'min': 0.5, 'Max': 512, 'p': 2, 'rest': 10, 'bootstrap': 512, 'Reuse': True, 'nTimes': 20, 'conf': 0.05, 'seed': 937162211, 'wColor': False}
+{'bins': 16, 'cliffs': 0.147, 'd': 0.35, 'Far': 0.95, 'go': 'nothing', 'file': 'etc/data/SSN.csv', 'help': False, 'Halves': 1024, 'min': 0.5, 'Max': 512, 'p': 2, 'rest': 10, 'bootstrap': 512, 'Reuse': True, 'nTimes': 20, 'conf': 0.05, 'seed': 937162211, 'wColor': True}
+time xpln1= 0.11229610443115234
+time xpln2= 0.10851407051086426
+time xpln1= 0.11132121086120605
+time xpln2= 0.10663986206054688
+time xpln1= 0.11424684524536133
+time xpln2= 0.10770010948181152
+time xpln1= 0.11151409149169922
+time xpln2= 0.10815000534057617
+time xpln1= 0.11399483680725098
+time xpln2= 0.10778498649597168
+time xpln1= 0.1132199764251709
+time xpln2= 0.10755515098571777
+time xpln1= 0.11122632026672363
+time xpln2= 0.10686302185058594
+time xpln1= 0.11278200149536133
+time xpln2= 0.10715794563293457
+time xpln1= 0.11649107933044434
+time xpln2= 0.10749006271362305
+time xpln1= 0.11551594734191895
+time xpln2= 0.10962319374084473
+time xpln1= 0.11432313919067383
+time xpln2= 0.1088259220123291
+time xpln1= 0.11313605308532715
+time xpln2= 0.10947108268737793
+time xpln1= 0.11263799667358398
+time xpln2= 0.10912895202636719
+time xpln1= 0.11145305633544922
+time xpln2= 0.11072683334350586
+time xpln1= 0.11114215850830078
+time xpln2= 0.1093759536743164
+time xpln1= 0.11231279373168945
+time xpln2= 0.11028313636779785
+time xpln1= 0.11144304275512695
+time xpln2= 0.10888028144836426
+time xpln1= 0.11072587966918945
+time xpln2= 0.10873293876647949
+time xpln1= 0.11697006225585938
+time xpln2= 0.11341619491577148
+time xpln1= 0.11635112762451172
+time xpln2= 0.11133575439453125
          PSNR-    Energy-    Avg evals
 -----  -------  ---------  -----------
 all      44.53       1658            0
-sway1    43.22    1545.55            9
+sway1     44.9     577.01            9
 xpln1     43.9    1395.37            9
-sway2   45.343    1479.34          5.7
-xpln2   44.009    1838.56          5.7
+sway2    43.56    1640.63            9
+xpln2    44.72    1093.89            9
 top      25.98     503.86        53662
 
                 PSNR-    Energy-
 --------------  -------  ---------
 all to all      =        =
-all to sway1    ≠        ≠
+all to sway1    =        ≠
 all to sway2    ≠        ≠
 sway1 to sway2  ≠        ≠
-sway1 to xpln1  ≠        ≠
+sway1 to xpln1  =        ≠
 sway2 to xpln2  ≠        ≠
 sway1 to top    ≠        ≠

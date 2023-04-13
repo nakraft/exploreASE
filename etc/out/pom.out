@@ -1,60 +1,59 @@
-{'bins': 16, 'cliffs': 0.147, 'd': 0.35, 'Far': 0.95, 'go': 'nothing', 'file': 'etc/data/pom.csv', 'help': False, 'Halves': 512, 'min': 0.5, 'Max': 512, 'p': 2, 'rest': 10, 'bootstrap': 512, 'Reuse': True, 'nTimes': 20, 'conf': 0.05, 'seed': 937162211, 'wColor': False}
+{'bins': 16, 'cliffs': 0.147, 'd': 0.35, 'Far': 0.95, 'go': 'nothing', 'file': 'etc/data/pom.csv', 'help': False, 'Halves': 1024, 'min': 0.5, 'Max': 512, 'p': 2, 'rest': 10, 'bootstrap': 512, 'Reuse': True, 'nTimes': 20, 'conf': 0.05, 'seed': 937162211, 'wColor': True}
+time xpln1= 0.030930757522583008
+time xpln2= 0.02708888053894043
+time xpln1= 0.0306088924407959
+time xpln2= 0.02732706069946289
+time xpln1= 0.03064417839050293
+time xpln2= 0.026997804641723633
+time xpln1= 0.03110814094543457
+time xpln2= 0.02711176872253418
+time xpln1= 0.03254294395446777
+time xpln2= 0.027856111526489258
+time xpln1= 0.03139996528625488
+time xpln2= 0.027347087860107422
+time xpln1= 0.031045913696289062
+time xpln2= 0.026805400848388672
+time xpln1= 0.03074479103088379
+time xpln2= 0.027287721633911133
+time xpln1= 0.03141283988952637
+time xpln2= 0.027137041091918945
+time xpln1= 0.03158307075500488
+time xpln2= 0.02708911895751953
+time xpln1= 0.031159162521362305
+time xpln2= 0.027373075485229492
+time xpln1= 0.03127622604370117
+time xpln2= 0.027710914611816406
+time xpln1= 0.031291961669921875
+time xpln2= 0.02681589126586914
+time xpln1= 0.031205177307128906
+time xpln2= 0.02700495719909668
+time xpln1= 0.031453847885131836
+time xpln2= 0.0277712345123291
+time xpln1= 0.03128170967102051
+time xpln2= 0.02589702606201172
+time xpln1= 0.031453847885131836
+time xpln2= 0.026829004287719727
+time xpln1= 0.031638145446777344
+time xpln2= 0.0270540714263916
+time xpln1= 0.031323909759521484
+time xpln2= 0.025574684143066406
+time xpln1= 0.031103134155273438
+time xpln2= 0.025827884674072266
          Cost-    Completion+    Idle-    Avg evals
 -----  -------  -------------  -------  -----------
 all     370.01           0.87     0.24            0
 sway1   195.77           0.85     0.26            8
 xpln1   283.51           0.87     0.24            8
-sway2  324.365          0.869   0.2465         5.35
-xpln2   363.63          0.865   0.2375         5.35
+sway2   190.28           0.87     0.22            8
+xpln2   239.74           0.87     0.24            8
 top     150.08           0.96        0         9999
 
                 Cost-    Completion+    Idle-
 --------------  -------  -------------  -------
 all to all      =        =              =
-all to sway1    ≠        ≠              ≠
-all to sway2    ≠        ≠              ≠
-sway1 to sway2  ≠        ≠              ≠
-sway1 to xpln1  ≠        ≠              ≠
-sway2 to xpln2  ≠        ≠              ≠
+all to sway1    ≠        =              =
+all to sway2    ≠        =              =
+sway1 to sway2  =        ≠              =
+sway1 to xpln1  ≠        =              =
+sway2 to xpln2  ≠        =              ≠
 sway1 to top    ≠        ≠              ≠
-
-time xpln1= 0.031229019165039062
-time xpln2= 0.027719974517822266
-time xpln1= 0.032836198806762695
-time xpln2= 0.027931928634643555
-time xpln1= 0.03174018859863281
-time xpln2= 0.02843499183654785
-time xpln1= 0.03098607063293457
-time xpln2= 0.027859926223754883
-time xpln1= 0.031793832778930664
-time xpln2= 0.027949810028076172
-time xpln1= 0.03219795227050781
-time xpln2= 0.028443098068237305
-time xpln1= 0.03233790397644043
-time xpln2= 0.02850508689880371
-time xpln1= 0.03283095359802246
-time xpln2= 0.02821803092956543
-time xpln1= 0.0322260856628418
-time xpln2= 0.028489351272583008
-time xpln1= 0.031867027282714844
-time xpln2= 0.02843618392944336
-time xpln1= 0.03209805488586426
-time xpln2= 0.02786397933959961
-time xpln1= 0.031481027603149414
-time xpln2= 0.027558088302612305
-time xpln1= 0.031234025955200195
-time xpln2= 0.027686119079589844
-time xpln1= 0.031099796295166016
-time xpln2= 0.028277873992919922
-time xpln1= 0.031132936477661133
-time xpln2= 0.02807784080505371
-time xpln1= 0.03303098678588867
-time xpln2= 0.0284271240234375
-time xpln1= 0.03136491775512695
-time xpln2= 0.02758502960205078
-time xpln1= 0.03144526481628418
-time xpln2= 0.02773308753967285
-time xpln1= 0.031131744384765625
-time xpln2= 0.0282900333404541
-time xpln1= 0.03169107437133789
-time xpln2= 0.027760028839111328

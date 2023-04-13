@@ -1,11 +1,51 @@
-{'bins': 16, 'cliffs': 0.147, 'd': 0.35, 'Far': 0.95, 'go': 'nothing', 'file': '../etc/data/SSM.csv', 'help': False, 'Halves': 512, 'min': 0.5, 'Max': 512, 'p': 2, 'rest': 10, 'bootstrap': 512, 'Reuse': True, 'nTimes': 20, 'conf': 0.05, 'seed': 937162211, 'wColor': False}
+{'bins': 16, 'cliffs': 0.147, 'd': 0.35, 'Far': 0.95, 'go': 'nothing', 'file': 'etc/data/SSM.csv', 'help': False, 'Halves': 1024, 'min': 0.5, 'Max': 512, 'p': 2, 'rest': 10, 'bootstrap': 512, 'Reuse': True, 'nTimes': 20, 'conf': 0.05, 'seed': 937162211, 'wColor': True}
+time xpln1= 0.19341015815734863
+time xpln2= 0.16884899139404297
+time xpln1= 0.18751311302185059
+time xpln2= 0.16647720336914062
+time xpln1= 0.1889028549194336
+time xpln2= 0.16618800163269043
+time xpln1= 0.18937087059020996
+time xpln2= 0.16757488250732422
+time xpln1= 0.18879485130310059
+time xpln2= 0.1664121150970459
+time xpln1= 0.18889307975769043
+time xpln2= 0.167708158493042
+time xpln1= 0.19009685516357422
+time xpln2= 0.16712093353271484
+time xpln1= 0.1884779930114746
+time xpln2= 0.1675431728363037
+time xpln1= 0.1888582706451416
+time xpln2= 0.1683640480041504
+time xpln1= 0.18950200080871582
+time xpln2= 0.1678168773651123
+time xpln1= 0.188889741897583
+time xpln2= 0.1680748462677002
+time xpln1= 0.19146013259887695
+time xpln2= 0.16633391380310059
+time xpln1= 0.18964362144470215
+time xpln2= 0.1692659854888916
+time xpln1= 0.18891072273254395
+time xpln2= 0.16665291786193848
+time xpln1= 0.18866610527038574
+time xpln2= 0.16912412643432617
+time xpln1= 0.1894371509552002
+time xpln2= 0.16784095764160156
+time xpln1= 0.18839597702026367
+time xpln2= 0.1714489459991455
+time xpln1= 0.19233202934265137
+time xpln2= 0.16624093055725098
+time xpln1= 0.18863487243652344
+time xpln2= 0.16871404647827148
+time xpln1= 0.19074201583862305
+time xpln2= 0.17356109619140625
          NUMBERITERATIONS-    TIMETOSOLUTION-    Avg evals
 -----  -------------------  -----------------  -----------
 all                  30.94             506.07            0
 sway1                 5.24             103.01           10
 xpln1                30.42             568.77           10
-sway2              11.3795            208.313         7.75
-xpln2              29.4895            471.896         7.75
+sway2                  6.7             116.04           10
+xpln2                 37.1             618.59           10
 top                   3.66              62.41       239360
 
                 NUMBERITERATIONS-    TIMETOSOLUTION-

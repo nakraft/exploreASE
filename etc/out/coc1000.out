@@ -1,61 +1,59 @@
-{'bins': 16, 'cliffs': 0.147, 'd': 0.35, 'Far': 0.95, 'go': 'nothing', 'file': '../etc/data/coc1000.csv', 'help': False, 'Halves': 512, 'min': 0.5, 'Max': 512, 'p': 2, 'rest': 10, 'bootstrap': 512, 'Reuse': True, 'nTimes': 20, 'conf': 0.05, 'seed': 937162211, 'wColor': False}
-all to all comparison failed for RISK-
+{'bins': 16, 'cliffs': 0.147, 'd': 0.35, 'Far': 0.95, 'go': 'nothing', 'file': 'etc/data/coc1000.csv', 'help': False, 'Halves': 1024, 'min': 0.5, 'Max': 512, 'p': 2, 'rest': 10, 'bootstrap': 512, 'Reuse': True, 'nTimes': 20, 'conf': 0.05, 'seed': 937162211, 'wColor': True}
+time xpln1= 0.026816129684448242
+time xpln2= 0.01866316795349121
+time xpln1= 0.02714824676513672
+time xpln2= 0.01876688003540039
+time xpln1= 0.02587890625
+time xpln2= 0.017811059951782227
+time xpln1= 0.025876998901367188
+time xpln2= 0.01791071891784668
+time xpln1= 0.026060104370117188
+time xpln2= 0.017788171768188477
+time xpln1= 0.026184797286987305
+time xpln2= 0.017904043197631836
+time xpln1= 0.02605915069580078
+time xpln2= 0.01842808723449707
+time xpln1= 0.02647709846496582
+time xpln2= 0.018397808074951172
+time xpln1= 0.02603006362915039
+time xpln2= 0.018568038940429688
+time xpln1= 0.026050806045532227
+time xpln2= 0.018564939498901367
+time xpln1= 0.026040077209472656
+time xpln2= 0.018558979034423828
+time xpln1= 0.026047229766845703
+time xpln2= 0.017670154571533203
+time xpln1= 0.02638101577758789
+time xpln2= 0.018225908279418945
+time xpln1= 0.02640390396118164
+time xpln2= 0.018439054489135742
+time xpln1= 0.02597784996032715
+time xpln2= 0.018522024154663086
+time xpln1= 0.026207923889160156
+time xpln2= 0.018596887588500977
+time xpln1= 0.026137828826904297
+time xpln2= 0.018767118453979492
+time xpln1= 0.026039838790893555
+time xpln2= 0.01841425895690918
+time xpln1= 0.026157140731811523
+time xpln2= 0.01841592788696289
+time xpln1= 0.026190996170043945
+time xpln2= 0.01890110969543457
           LOC+    AEXP-    PLEX-    RISK-    EFFORT-    Avg evals
 -----  -------  -------  -------  -------  ---------  -----------
 all    1013.05     2.97     3.05     6.68    30807.5            0
 sway1   889.39     3.19     2.48     5.39    32927.1            6
 xpln1    980.1     2.99     3.02     6.32    26293.6            6
-sway2  1004.21   2.9775   2.8415   5.6045    22794.5         4.95
-xpln2  1005.85   2.9795   3.0445    6.489    28967.3         4.95
+sway2  1081.77     2.68     2.94     9.52    25380.8            6
+xpln2  1013.05     2.97     3.05     6.68    30807.5            6
 top    1528.83      1.7     1.53     4.47    33999.8         1000
 
                 LOC+    AEXP-    PLEX-    RISK-    EFFORT-
 --------------  ------  -------  -------  -------  ---------
-all to all      =       =        =        =        =
-all to sway1    ≠       ≠        ≠        ≠        ≠
-all to sway2    ≠       ≠        ≠        ≠        ≠
-sway1 to sway2  ≠       ≠        ≠        ≠        ≠
-sway1 to xpln1  ≠       ≠        ≠        ≠        =
-sway2 to xpln2  ≠       ≠        ≠        ≠        ≠
+all to all      =       =        ≠        =        =
+all to sway1    ≠       ≠        ≠        =        =
+all to sway2    =       ≠        =        ≠        ≠
+sway1 to sway2  ≠       ≠        ≠        ≠        =
+sway1 to xpln1  =       ≠        ≠        =        =
+sway2 to xpln2  =       ≠        =        ≠        =
 sway1 to top    ≠       ≠        ≠        =        ≠
-
-time xpln1= 0.026313066482543945
-time xpln2= 0.0183868408203125
-time xpln1= 0.025890827178955078
-time xpln2= 0.018311738967895508
-time xpln1= 0.02506422996520996
-time xpln2= 0.0181119441986084
-time xpln1= 0.025185108184814453
-time xpln2= 0.01761937141418457
-time xpln1= 0.02518296241760254
-time xpln2= 0.017603635787963867
-time xpln1= 0.02517986297607422
-time xpln2= 0.0183255672454834
-time xpln1= 0.02501511573791504
-time xpln2= 0.01793813705444336
-time xpln1= 0.024893999099731445
-time xpln2= 0.018524169921875
-time xpln1= 0.025129079818725586
-time xpln2= 0.01844000816345215
-time xpln1= 0.02528691291809082
-time xpln2= 0.018127918243408203
-time xpln1= 0.02538609504699707
-time xpln2= 0.01807689666748047
-time xpln1= 0.02538609504699707
-time xpln2= 0.018061161041259766
-time xpln1= 0.02578592300415039
-time xpln2= 0.01808905601501465
-time xpln1= 0.02529120445251465
-time xpln2= 0.018197059631347656
-time xpln1= 0.025356769561767578
-time xpln2= 0.018225908279418945
-time xpln1= 0.024977922439575195
-time xpln2= 0.018047094345092773
-time xpln1= 0.025809049606323242
-time xpln2= 0.018065929412841797
-time xpln1= 0.025485992431640625
-time xpln2= 0.018290042877197266
-time xpln1= 0.02540111541748047
-time xpln2= 0.018294095993041992
-time xpln1= 0.026437044143676758
-time xpln2= 0.018117189407348633

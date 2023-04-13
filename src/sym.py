@@ -1,6 +1,7 @@
 # SYM
 # Summarize a stream of symbols.
 
+import collections
 import math
 
 class Sym():
@@ -21,24 +22,22 @@ class Sym():
             self.txt = ""
 
         self.n = 0
-        self.has = {}
+        self.has = collections.defaultdict(int)
         self.most = 0
         self.mode = None
 
-    def add(self, x: str) -> None:
+    def add(self, x: str, n =1) -> None:
         """
             Method that adds the value in the column to the sym instance.
             Updates the maximum and mode value for the symbol. 
         """
         if x != "?":
-            self.n = self.n + 1
-            if x in self.has:
-                self.has[x] = 1 + self.has[x]
-            else:
-                self.has[x] = 1
-            if self.has[x] > self.most: 
+            self.n = self.n + n
+            self.has[x] = n + (self.has[x] or 0)
+            if self.has[x] > self.most:
                 self.most = self.has[x]
                 self.mode = x
+        return x
 
     def mid(self) -> str:
         """

@@ -17,3 +17,104 @@ sway1 to sway2  ≠       ≠       ≠
 sway1 to xpln1  ≠       =       =
 sway2 to xpln2  ≠       ≠       ≠
 sway1 to top    ≠       ≠       ≠
+
+time xpln1= 0.07577300071716309
+time xpln2= 0.05466198921203613
+time xpln1= 0.07506918907165527
+time xpln2= 0.05476093292236328
+time xpln1= 0.07529926300048828
+time xpln2= 0.05509376525878906
+time xpln1= 0.07538580894470215
+time xpln2= 0.055226802825927734
+time xpln1= 0.07517099380493164
+time xpln2= 0.055626869201660156
+time xpln1= 0.07570791244506836
+time xpln2= 0.055496931076049805
+time xpln1= 0.07494378089904785
+time xpln2= 0.0550990104675293
+time xpln1= 0.07588696479797363
+time xpln2= 0.05683112144470215
+time xpln1= 0.07656216621398926
+time xpln2= 0.055670738220214844
+time xpln1= 0.07624125480651855
+time xpln2= 0.055528879165649414
+time xpln1= 0.07673811912536621
+time xpln2= 0.055413007736206055
+time xpln1= 0.07556486129760742
+time xpln2= 0.05522799491882324
+time xpln1= 0.07538199424743652
+time xpln2= 0.055294036865234375
+time xpln1= 0.07652473449707031
+time xpln2= 0.05512404441833496
+time xpln1= 0.07605099678039551
+time xpln2= 0.05507993698120117
+time xpln1= 0.07646298408508301
+time xpln2= 0.055570125579833984
+time xpln1= 0.07641768455505371
+time xpln2= 0.05527186393737793
+time xpln1= 0.0764000415802002
+time xpln2= 0.05492210388183594
+time xpln1= 0.0763540267944336
+time xpln2= 0.05528092384338379
+time xpln1= 0.07638120651245117
+time xpln2= 0.05492687225341797
+          Loc+    Risk-    Effort-    Avg evals
+-----  -------  -------  ---------  -----------
+all    1009.04     6.59    30506.4            0
+sway1   999.99     6.36    38767.3            8
+xpln1  1008.43     6.88    28744.6            8
+sway2   1026.6     6.74    33689.2            8
+xpln2   1005.5     6.63    31448.1            8
+top    1941.22      0.4    19822.5        10000
+
+                Loc+    Risk-    Effort-
+--------------  ------  -------  ---------
+all to all      =       =        =
+all to sway1    =       =        =
+all to sway2    =       =        =
+sway1 to sway2  =       =        =
+sway1 to xpln1  =       =        =
+sway2 to xpln2  =       =        =
+sway1 to top    ≠       ≠        ≠
+sc@MacBook-Pro-12 finalProject591 % python3 src/main.py
+{'bins': 16, 'cliffs': 0.147, 'd': 0.35, 'Far': 0.95, 'go': 'nothing', 'file': 'etc/data/healthCloseIsses12mths0001-hard.csv', 'help': False, 'Halves': 512, 'min': 0.5, 'Max': 512, 'p': 2, 'rest': 10, 'bootstrap': 512, 'Reuse': True, 'nTimes': 20, 'conf': 0.05, 'seed': 937162211, 'wColor': True}
+time xpln1= 0.015240907669067383
+time xpln2= 0.015939712524414062
+time xpln1= 0.01488184928894043
+time xpln2= 0.015890121459960938
+time xpln1= 0.014945030212402344
+time xpln2= 0.016087770462036133
+time xpln1= 0.015160083770751953
+time xpln2= 0.015865087509155273
+time xpln1= 0.0149078369140625
+time xpln2= 0.015854835510253906
+time xpln1= 0.01497793197631836
+time xpln2= 0.015869140625
+time xpln1= 0.014937877655029297
+time xpln2= 0.015864133834838867
+time xpln1= 0.015069961547851562
+time xpln2= 0.015987873077392578
+time xpln1= 0.0158231258392334
+time xpln2= 0.016482114791870117
+time xpln1= 0.014874935150146484
+time xpln2= 0.016048908233642578
+time xpln1= 0.014938831329345703
+time xpln2= 0.01609492301940918
+time xpln1= 0.01488804817199707
+time xpln2= 0.015830039978027344
+time xpln1= 0.01488494873046875
+time xpln2= 0.01614093780517578
+time xpln1= 0.01494288444519043
+time xpln2= 0.01605987548828125
+time xpln1= 0.01502680778503418
+time xpln2= 0.01629495620727539
+time xpln1= 0.015131950378417969
+time xpln2= 0.01578068733215332
+time xpln1= 0.014885187149047852
+time xpln2= 0.01600790023803711
+time xpln1= 0.015201091766357422
+time xpln2= 0.015980005264282227
+time xpln1= 0.014967918395996094
+time xpln2= 0.015361785888671875
+time xpln1= 0.014932870864868164
+time xpln2= 0.015824079513549805

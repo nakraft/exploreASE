@@ -17,6 +17,7 @@ import util as util
 from string_util import *
 from lists import Lists
 
+
 class Data:
     def __init__(self, src=None, rows=None):
         self.rows = list()
@@ -31,36 +32,36 @@ class Data:
             csv(src, f)
         else:
             self.cols = Cols(src.cols.names)
-            
+
             for row in rows:
                 self.add(row)
-    
-    
+
     def add(self, t):
         if self.cols:
             t = t if isinstance(t, Row) else Row(t)
             self.rows.append(t)
             self.cols.add(t)
         else:
-            self.cols=Cols(t)
-            
+            self.cols = Cols(t)
+
     def stats(self, what, cols, nPlaces):
         def fun(_, col):
             if what == 'div':
                 val = col.div()
             else:
                 val = col.mid()
-            return col.rnd(val, nPlaces),col.txt
+            return col.rnd(val, nPlaces), col.txt
         return Lists.kap(cols or self.cols.y, fun)
-    
-    def dist(self, row1, row2, cols = None):
-        n,d = 0,0
+
+    def dist(self, row1, row2, cols=None):
+        n, d = 0, 0
         for col in cols or self.cols.x:
             n = n + 1
-            d = d + col.dist(row1.cells[col.at], row2.cells[col.at])**config.the['p']
+            d = d + col.dist(row1.cells[col.at],
+                             row2.cells[col.at])**config.the['p']
         return (d/n)**(1/config.the['p'])
 
-    def clone(self, init = {}):
+    def clone(self, init={}):
         data1 = Data()
         data1.add(self.cols.names)
         for _, t in enumerate(init or {}):
@@ -69,11 +70,10 @@ class Data:
 
     def stats(self, cols: List[Union[Sym, Num]] = None, nplaces: int = 2, what: str = "mid") -> Dict:
 
-        ret = dict(sorted({col.txt: rnd(getattr(col, what)(), nplaces) for col in cols or self.cols.y}.items()))
+        ret = dict(sorted({col.txt: rnd(getattr(col, what)(), nplaces)
+                   for col in cols or self.cols.y}.items()))
         ret["N"] = len(self.rows)
         return ret
-
-
 
     def sway(self, cols=None):
         def worker(rows, worse, evals0=None, above=None):
@@ -93,7 +93,7 @@ class Data:
         best, rest, evals = worker(self.rows, [], 0)
 
         return Data.clone(self, best), Data.clone(self, rest), evals
-    
+
     def sway2(self, cols=None):
         def worker(rows, worse, evals0=None, above=None):
             if len(rows) <= len(self.rows) ** config.the["min"]:
@@ -113,6 +113,7 @@ class Data:
 
         return Data.clone(self, best), Data.clone(self, rest), evals
     # zitzler predicate
+
     def better(self, row1, row2, s1=0, s2=0, ys=None, x=0, y=0):
         if not ys:
             ys = self.cols.y
@@ -127,10 +128,10 @@ class Data:
         return s1 / len(ys) < s2 / len(ys)
 
     def betters(self, n=None):
-        tmp = sorted(self.rows, key=cmp_to_key(lambda row1, row2: -1 if self.better(row1, row2) else 1))
+        tmp = sorted(self.rows, key=cmp_to_key(
+            lambda row1, row2: -1 if self.better(row1, row2) else 1))
         return tmp[1:n], tmp[n+1:] if n is not None else tmp
 
-    
     def half(self, rows=None, cols=None, above=None):
         """
         divides data using 2 far points
@@ -152,14 +153,15 @@ class Data:
 
         A = above if above and config.the["Reuse"] else any(some)
 
-        tmp = sorted([{"row": r, "d": gap(r, A)} for r in some], key=lambda x: x["d"])
+        tmp = sorted([{"row": r, "d": gap(r, A)}
+                     for r in some], key=lambda x: x["d"])
         far = tmp[int((len(tmp) - 1) * config.the["Far"])]
 
         B, c = far["row"], far["d"]
 
         sorted_rows = sorted(map(proj, rows), key=lambda x: x["x"])
         left, right = [], []
-            
+
         for n, two in enumerate(sorted_rows):
             if (n + 1) <= (len(rows) / 2):
                 left.append(two["row"])
@@ -168,8 +170,8 @@ class Data:
 
         evals = 1 if config.the["Reuse"] and above else 2
 
-        return left, right, A, B, c, evals 
-    
+        return left, right, A, B, c, evals
+
     def half2(self, rows=None, cols=None, above=None):
         """
         divides data using 2 far points
@@ -189,16 +191,15 @@ class Data:
         rows = rows or self.rows
         some = many(rows, int(config.the["Halves"]))
 
-        A = above if above and config.the["Reuse"] else any(some)
+        # randomly select two rows as initial A and B points
+        random.seed(100)
+        A, B = random.sample(some, 2)
 
-        tmp = sorted([{"row": r, "d": gap(r, A)} for r in some], key=lambda x: x["d"])
-        far = tmp[int((random.randint(0,len(tmp) - 1) * config.the["Far"]))] 
-
-        B, c = far["row"], far["d"]
+        c = gap(A, B)
 
         sorted_rows = sorted(map(proj, rows), key=lambda x: x["x"])
         left, right = [], []
-            
+
         for n, two in enumerate(sorted_rows):
             if (n + 1) <= (len(rows) / 2):
                 left.append(two["row"])
@@ -237,6 +238,7 @@ class Data:
         cols = cols or self.cols.x
 
         for col in cols:
-            d = d + dist1(col, t1.cells[col.at], t2.cells[col.at]) ** config.the["p"]
+            d = d + dist1(col, t1.cells[col.at],
+                          t2.cells[col.at]) ** config.the["p"]
 
         return (d / len(cols)) ** (1 / config.the["p"])

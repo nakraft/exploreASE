@@ -66,17 +66,18 @@ def rnd(n: float, nPlaces = 2) -> float:
     mult = 10**nPlaces
     return math.floor(n * mult + 0.5) / mult
 
-def rand(lo = 0, hi = 1, mSeed = None):
+def rand(lo = 0, hi = 1):
     global Seed
     lo, hi = lo or 0, hi or 1
-    s = (16807 * Seed) % 2147483647
-    return lo + (hi-lo) * s / 2147483647
+    Seed = (16807 * Seed) % 2147483647
+    return lo + (hi-lo) * Seed / 2147483647
 
 def many(t,n):
     u=[]
     for _ in range(1,n+1):
         u.append(any(t))
     return u
+
 def cliffsDelta(ns1,ns2):
     if len(ns1) > 256:
         ns1 = many(ns1,256)

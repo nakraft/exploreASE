@@ -192,10 +192,10 @@ def update_comp(comparisons, results, count, data):
                 equals = bootstrap(base_y.has(), diff_y.has()) and cliffsDelta(
                     base_y.has(), diff_y.has())
                 if not equals:
-                    if i == 0:
-                        print("WARNING: all to all {} {} {}".format(i, k, "false"))
-                        print(
-                            f"all to all comparison failed for {results[base][count].cols.y[k].txt}")
+                    # if i == 0:
+                        # print("WARNING: all to all {} {} {}".format(i, k, "false"))
+                        # print(
+                            # f"all to all comparison failed for {results[base][count].cols.y[k].txt}")
                     comparisons[i][1][k] = "≠"
     return comparisons
 

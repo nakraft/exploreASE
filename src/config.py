@@ -13,16 +13,16 @@ OPTIONS:
   -d  --d       different is over sd*d       = .35
   -F  --Far     distance to distant          = .95
   -g  --go      start-up action              = nothing
-  -f  --file    file to generate table of    = etc/data/auto2.csv
+  -f  --file    file to generate table of    = etc/data/coc10000.csv
   -h  --help    show help                    = false
-  -H  --Halves  search space for clustering  = 1024
+  -H  --Halves  search space for clustering  = 2056
   -m  --min     size of smallest cluster     = .5
   -M  --Max     numbers                      = 512
   -p  --p       dist coefficient             = 2
   -r  --rest    how many of rest to sample   = 10
   -x  --bootstrap   number of samples to bootstrap   = 512
   -R  --Reuse   child splits reuse a parent pole = true
-  -n  --nTimes   number of iterations to run  = 3
+  -n  --nTimes   number of iterations to run  = 20
   -o  --conf        confidence interval      = 0.05
   -s  --seed    random number seed           = 937162211
   -h  --help    show help                    = false
@@ -40,10 +40,11 @@ def rint(nlo, nhi):
   return math.floor(.5 + rand(nlo, nhi))
 
 def rand(nlo, nhi): 
+  global Seed
   nlo = nlo if nlo is not None else 0 
   nhi = nhi if nhi is not None else 1 
-  seed = (16807 * Seed) % 2147483647
-  return nlo + (nhi - nlo) * seed / 2147483647
+  Seed = (16807 * Seed) % 2147483647
+  return nlo + (nhi - nlo) * Seed / 2147483647
 
 def rnd(n, nPlaces=3):
     mult=10**(nPlaces or 3)

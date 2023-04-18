@@ -145,27 +145,6 @@ def main(options, help):
                 print(f" \t{rx['rank']}\t{rx['name']}\t{rx['show']}")
             
             print()
-            
-        # ---
-        # rxs=[]
-        # temp_dict = {}
-        # for k1,v1 in get_stats(v).items():
-        #     temp_dict[k1] = []
-        # # print(temp_dict)
-
-        # for k,v in results.items():
-        #     for k1,v1 in get_stats(v).items():
-        #         temp_dict[k1].append(v1)
-
-        # # print(temp_dict)
-
-        # for k,v in temp_dict.items():
-        #     rxs.append(RX(v, k))
-
-        #     # rxs.append(RX(tmp, k))
-        # for rx in tiles(scottKnot(rxs)):
-        #     print(f" \t{rx['rank']}\t{rx['name']}\t{rx['show']}")
-        # ---
 
 
 def get_stats(data_array):
@@ -188,17 +167,12 @@ def get_stats(data_array):
 
 
 def get_all_runs(data_array):
-    # gets the average stats, given the data array objects
-    res = {}
+    # gets all of the run data
     final = []
-    # accumulate the stats
-    # print(len(data_array))
     for item in data_array:
         stats = item.stats()
-        # print(stats)
-        # update the stats
         final.append(stats)
-        # print(res)
+    # pp.pprint(final)
     return final
 
 

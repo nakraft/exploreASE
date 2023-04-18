@@ -73,7 +73,7 @@ def main(options, help):
                 top2, _ = data.betters(len(best.rows))
                 top = Data(data, top2)
                 results['top'].append(top)
-
+                
                 # accumulate the number of evals
                 n_evals["all"] += 0
                 n_evals["sway1"] += evals_sway

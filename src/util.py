@@ -7,6 +7,8 @@ from string_util import *
 import config as config
 from lists import Lists
 
+Seed = (16807 * config.Seed) % 2147483647
+
 def itself(x):
     return x
 
@@ -65,9 +67,10 @@ def rnd(n: float, nPlaces = 2) -> float:
     return math.floor(n * mult + 0.5) / mult
 
 def rand(lo = 0, hi = 1, mSeed = None):
+    global Seed
     lo, hi = lo or 0, hi or 1
-    Seed = config.Seed
-    Seed = 1 if mSeed else (16807 * Seed) % 2147483647
+    # Seed = (16807 * config.Seed) % 2147483647
+    # Seed = 1 if mSeed else (16807 * Seed) % 2147483647
     return lo + (hi-lo) * Seed / 2147483647
 def many(t,n):
     u=[]

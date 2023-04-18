@@ -20,7 +20,7 @@ To complete bonus activity 1, 5 people were asked to complete repertory grids re
 | Old age                   | 2.6 | 2.2 | 2.2 | 4.2 | 3.8 | 1.8 | 2.2 | 2.8 | 2.4 | 4 | New age | 
 
 |                           | Mean Response | Participant 1 | Participant 2 | Participant 3 | Participant 4 | Participant 5    | 
-|---------------------------|----------|--------|-------|-------|---------|
+|---------------------------|----------|--------|-------|-------|---------|----|
 | MPG                       | 4.8 | 5 | 4 | 5 | 5 | 5 |
 | # of Cylinders            | 2.6 | 2 | 3 | 2 | 5 | 1 |
 | Horsepower                | 2.6 | 2 | 3 | 2 | 5 | 1 | 

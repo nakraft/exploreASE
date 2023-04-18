@@ -66,10 +66,17 @@ def rnd(n: float, nPlaces = 2) -> float:
     mult = 10**nPlaces
     return math.floor(n * mult + 0.5) / mult
 
-def rand(lo = 0, hi = 1):
+def rand(lo = 0, hi = 1 ):
     global Seed
     lo, hi = lo or 0, hi or 1
     Seed = (16807 * Seed) % 2147483647
+    
+    mSeed = (config.the['mSeed'])
+    if mSeed:
+        Seed = 1
+    
+    # print(Seed)
+    
     return lo + (hi-lo) * Seed / 2147483647
 
 def many(t,n):

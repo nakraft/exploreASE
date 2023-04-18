@@ -192,8 +192,9 @@ class Data:
         some = many(rows, int(config.the["Halves"]))
 
         # randomly select two rows as initial A and B points
-        random.seed(100)
-        A, B = random.sample(rows[:10], 2)
+        # random.seed(100)
+        
+        A, B = random.sample(some[:10], 2)
 
         c = gap(A, B)
 
@@ -205,6 +206,8 @@ class Data:
                 left.append(two["row"])
             else:
                 right.append(two["row"])
+
+       
 
         evals = 1 if config.the["Reuse"] and above else 2
 

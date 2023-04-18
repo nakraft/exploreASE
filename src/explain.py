@@ -29,6 +29,7 @@ class Explain:
         return None,None
 
     def xpln(self, data: Data, best: Data, rest: Data):
+        print()
         start_time = time.time()
         def v(has):
             return value(has, len(best.rows), len(rest.rows), "best")
@@ -40,6 +41,7 @@ class Explain:
                 tmp.append({"range":range, "max":len(ranges),"val": v(range['y'].has)})
         rule,most=self.firstN(sorted(tmp,key = lambda x: x["val"],reverse=True),self.score)
         print("time xpln1= " + str(time.time()-start_time))
+        
         return rule,most
     
     def firstN(self, sorted_ranges, scoreFun):

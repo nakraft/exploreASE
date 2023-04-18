@@ -82,6 +82,7 @@ def bootstrap(y0, z0):
         if delta(Num(t=samples(yhat)), Num(t=samples(zhat))) > tobs:
             n = n + 1
     return n / config.the['bootstrap'] > config.the['conf']
+
 def RX(t, s): 
     sorted(t)
     r = {

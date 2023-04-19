@@ -13,9 +13,9 @@ OPTIONS:
   -d  --d       different is over sd*d       = .35
   -F  --Far     distance to distant          = .95
   -g  --go      start-up action              = nothing
-  -f  --file    file to generate table of    = etc/data/auto2.csv
+  -f  --file    file to generate table of    = etc/data/SSN.csv
   -h  --help    show help                    = false
-  -H  --Halves  search space for clustering  = 512
+  -H  --Halves  search space for clustering  = 4096
   -m  --min     size of smallest cluster     = .5
   -M  --Max     numbers                      = 512
   -p  --p       dist coefficient             = 2

@@ -13,9 +13,9 @@ OPTIONS:
   -d  --d       different is over sd*d       = .35
   -F  --Far     distance to distant          = .95
   -g  --go      start-up action              = nothing
-  -f  --file    file to generate table of    = etc/data/SSN.csv
+  -f  --file    file to generate table of    = etc/data/new_SSM_for_FebStudy.csv
   -h  --help    show help                    = false
-  -H  --Halves  search space for clustering  = 4096
+  -H  --Halves  search space for clustering  = 315
   -m  --min     size of smallest cluster     = .5
   -M  --Max     numbers                      = 512
   -p  --p       dist coefficient             = 2

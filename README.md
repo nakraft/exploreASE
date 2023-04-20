@@ -1,18 +1,24 @@
 # Final Project CSC 591
 
-## Description
+## Algorithm Descriptions:
+
+- ### sway2: TODO
+
+- ### xpln2: TODO
+
+- ### main.py: TODO
 
 ## How to run
 
-* Install python atleast 3.9
-* To install requirements run `pip install -r requirements.txt`
+* Install python
 * Change directory to src using `cd src`
-
+* Run `python main.py` to generate tables
 
 
 For Repgrids report, please see docs/repertory_grids.md.
 
 ## Output 
+TODO
 
 ## Authors 
 

@@ -13,7 +13,7 @@ For Repgrids report, please see docs/repertory_grids.md.
 
 ## Structure
 
-- Data files are located at [data](data)
+- Data files are located at [data](https://github.com/nakraft/exploreASE/tree/main/etc/data)
 - Output files are located at [out](out) and are named using the csv file name
 - Python files are located at [src](src)
 - A [script](generate_out.sh) is used to generate all output. It iterates over all data files, runs them through our program, and concatenates output to the output directory

@@ -2,10 +2,9 @@ import math
 
 
 the,help = {},"""
-xpln: multi-goal semi-supervised explanation
-(c) 2023 Tim Menzies <timm@ieee.org> BSD-2
-  
-USAGE: lua xpln.lua [OPTIONS] [-g ACTIONS]
+project: multi-goal semi-supervised algorithms
+
+USAGE: python3 main.py [OPTIONS] [-g ACTIONS]
   
 OPTIONS:
   -b  --bins    initial number of bins       = 16

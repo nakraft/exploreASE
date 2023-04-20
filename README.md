@@ -1,13 +1,5 @@
 # Final Project CSC 591
 
-## Algorithm Descriptions:
-
-- ### sway2: TODO
-
-- ### xpln2: TODO
-
-- ### main.py: TODO
-
 ## How to run
 
 * Install python

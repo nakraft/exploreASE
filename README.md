@@ -9,8 +9,8 @@
 
 For Repgrids report, please see docs/repertory_grids.md.
 
-## Output 
-TODO
+TODO:
+Provide links for outputs, and information about how to run with help string
 
 ## Authors 
 

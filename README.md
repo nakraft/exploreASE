@@ -48,7 +48,7 @@ For Repgrids report, please see docs/repertory_grids.md.
 - Data files are located at [data](https://github.com/nakraft/exploreASE/tree/main/etc/data)
 - Output files are located at [out](https://github.com/nakraft/exploreASE/tree/main/etc/out)
 - Python files are located at [src](https://github.com/nakraft/exploreASE/tree/main/src)
-- A [script](generate_out.sh) is used to generate all output and stored them to `etc/out/data_file.out`
+- A [script]([generate_out.sh](https://github.com/nakraft/exploreASE/blob/main/generate_output.sh)) is used to generate all output and stored them to `etc/out/data_file.out`
     
 
 ## Authors 
